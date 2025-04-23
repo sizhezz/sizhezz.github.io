@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Sizhe&#39;s blog</title>
+  
+  <subtitle>游戏的人</subtitle>
+  <link href="http://sizhezz.github.io/atom.xml" rel="self"/>
+  
+  <link href="http://sizhezz.github.io/"/>
+  <updated>2025-04-23T07:00:39.554Z</updated>
+  <id>http://sizhezz.github.io/</id>
+  
+  <author>
+    <name>Sizhe</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://sizhezz.github.io/2025/04/23/README/"/>
+    <id>http://sizhezz.github.io/2025/04/23/README/</id>
+    <published>2025-04-23T07:00:39.553Z</published>
+    <updated>2025-04-23T07:00:39.554Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="hexo-posts-examples"><a href="#hexo-posts-examples" class="headerlink" title="hexo-posts-examples"></a>hexo-posts-examples</h1><p>Examples with categories and tags of hexo’s posts.</p><h2 id="scripts-for-creating-posts"><a href="#scripts-for-creating-posts" class="headerlink" title="scripts for creating posts"></a>scripts for creating posts</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">to_int</span>(<span class="params">valid_time</span>):</span><br><span class="line"><span class="comment">#  = &#x27;2021-08-08 15:47:01&#x27;</span></span><br><span class="line">    d1 = datetime.datetime.strptime(valid_time,<span class="string">&#x27;%Y-%m-%d %H:%M:%S&#x27;</span>)</span><br><span class="line">    ts = <span class="built_in">int</span>(time.mktime(d1.timetuple()))</span><br><span class="line">    <span class="keyword">return</span> ts</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">to_date</span>(<span class="params">intTime</span>):</span><br><span class="line">    time1 = time.localtime(intTime)</span><br><span class="line">    <span class="keyword">return</span> time.strftime(<span class="string">&#x27;%Y-%m-%d %H:%M:%S&#x27;</span>, time1)</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">content</span>(<span class="params">one_type, one_tag, title</span>):</span><br><span class="line">    <span class="comment"># 开始时间与结束时间中随机</span></span><br><span class="line">    start = to_int(<span class="string">&#x27;2022-04-01 12:12:00&#x27;</span>)</span><br><span class="line">    end = to_int(<span class="string">&#x27;2022-04-18 12:12:00&#x27;</span>)</span><br><span class="line">    res1 = random.randrange(start, end, <span class="number">100</span>)</span><br><span class="line">    </span><br><span class="line">    format_date = to_date(res1)</span><br><span class="line">    </span><br><span class="line">    content = <span class="string">&#x27;---\n&#x27;</span> + \</span><br><span class="line">              <span class="string">&#x27;title:&#x27;</span> + title + <span class="string">&#x27;\n&#x27;</span> + \</span><br><span class="line">              <span class="string">&#x27;categories: &#x27;</span> + <span class="string">&#x27;\n&#x27;</span> + \</span><br><span class="line">              <span class="string">&#x27;  - &#x27;</span> + one_type + <span class="string">&#x27;\n&#x27;</span> + \</span><br><span class="line">                <span class="string">&#x27;tags: \n&#x27;</span> + \</span><br><span class="line">                <span class="string">&#x27;  - &#x27;</span> + one_tag + <span class="string">&quot;\n&quot;</span> + \</span><br><span class="line">                <span class="string">&#x27;date: &#x27;</span> + format_date + <span class="string">&quot;\n&quot;</span> + \</span><br><span class="line">                <span class="string">&#x27;---\n\n&#x27;</span> + <span class="string">&#x27;# &#x27;</span> + title + <span class="string">&#x27;\n&#x27;</span>            </span><br><span class="line">    <span class="keyword">return</span> content</span><br><span class="line"></span><br><span class="line">types = (<span class="string">&#x27;python&#x27;</span>, <span class="string">&#x27;java&#x27;</span>, <span class="string">&#x27;linux&#x27;</span>, <span class="string">&#x27;scala&#x27;</span>, <span class="string">&#x27;html&#x27;</span>, <span class="string">&#x27;javascript&#x27;</span>)</span><br><span class="line">tags = (<span class="string">&#x27;示例&#x27;</span>, <span class="string">&#x27;笔记&#x27;</span>, <span class="string">&#x27;心得&#x27;</span>, <span class="string">&#x27;随笔&#x27;</span>)</span><br><span class="line">times = <span class="number">6</span></span><br><span class="line"><span class="keyword">for</span> t, one <span class="keyword">in</span> <span class="built_in">enumerate</span>(types):</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(times):</span><br><span class="line">        file_name = <span class="string">&#x27;&#123;0&#125;_&#123;1&#125;.md&#x27;</span>.<span class="built_in">format</span>(one, i+<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(file_name, mode=<span class="string">&#x27;w+&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            f.write( content(one, tags[t%<span class="built_in">len</span>(tags)], <span class="string">&#x27;&#123;0&#125;_&#123;1&#125;&#x27;</span>.<span class="built_in">format</span>(one, i+<span class="number">1</span>)) )</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;hexo-posts-examples&quot;&gt;&lt;a href=&quot;#hexo-posts-examples&quot; class=&quot;headerlink&quot; title=&quot;hexo-posts-examples&quot;&gt;&lt;/a&gt;hexo-posts-examples&lt;/h1&gt;&lt;p&gt;Ex</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>javascript_5</title>
+    <link href="http://sizhezz.github.io/2022/04/18/javascript_5/"/>
+    <id>http://sizhezz.github.io/2022/04/18/javascript_5/</id>
+    <published>2022-04-17T23:42:00.000Z</published>
+    <updated>2025-04-23T07:00:39.561Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="javascript-5"><a href="#javascript-5" class="headerlink" title="javascript_5"></a>javascript_5</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;javascript-5&quot;&gt;&lt;a href=&quot;#javascript-5&quot; class=&quot;headerlink&quot; title=&quot;javascript_5&quot;&gt;&lt;/a&gt;javascript_5&lt;/h1&gt;</summary>
+      
+    
+    
+    
+    <category term="javascript" scheme="http://sizhezz.github.io/categories/javascript/"/>
+    
+    
+    <category term="笔记" scheme="http://sizhezz.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python_6</title>
+    <link href="http://sizhezz.github.io/2022/04/18/python_6/"/>
+    <id>http://sizhezz.github.io/2022/04/18/python_6/</id>
+    <published>2022-04-17T22:32:00.000Z</published>
+    <updated>2025-04-23T07:00:39.568Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="python-6"><a href="#python-6" class="headerlink" title="python_6"></a>python_6</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;python-6&quot;&gt;&lt;a href=&quot;#python-6&quot; class=&quot;headerlink&quot; title=&quot;python_6&quot;&gt;&lt;/a&gt;python_6&lt;/h1&gt;</summary>
+      
+    
+    
+    
+    <category term="python" scheme="http://sizhezz.github.io/categories/python/"/>
+    
+    
+    <category term="示例" scheme="http://sizhezz.github.io/tags/%E7%A4%BA%E4%BE%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java_2</title>
+    <link href="http://sizhezz.github.io/2022/04/18/java_2/"/>
+    <id>http://sizhezz.github.io/2022/04/18/java_2/</id>
+    <published>2022-04-17T19:57:00.000Z</published>
+    <updated>2025-04-23T07:00:39.558Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="java-2"><a href="#java-2" class="headerlink" title="java_2"></a>java_2</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;java-2&quot;&gt;&lt;a href=&quot;#java-2&quot; class=&quot;headerlink&quot; title=&quot;java_2&quot;&gt;&lt;/a&gt;java_2&lt;/h1&gt;</summary>
+      
+    
+    
+    
+    <category term="java" scheme="http://sizhezz.github.io/categories/java/"/>
+    
+    
+    <category term="笔记" scheme="http://sizhezz.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>javascript_6</title>
+    <link href="http://sizhezz.github.io/2022/04/17/javascript_6/"/>
+    <id>http://sizhezz.github.io/2022/04/17/javascript_6/</id>
+    <published>2022-04-17T15:10:20.000Z</published>
+    <updated>2025-04-23T07:00:39.561Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="javascript-6"><a href="#javascript-6" class="headerlink" title="javascript_6"></a>javascript_6</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;javascript-6&quot;&gt;&lt;a href=&quot;#javascript-6&quot; class=&quot;headerlink&quot; title=&quot;javascript_6&quot;&gt;&lt;/a&gt;javascript_6&lt;/h1&gt;</summary>
+      
+    
+    
+    
+    <category term="javascript" scheme="http://sizhezz.github.io/categories/javascript/"/>
+    
+    
+    <category term="笔记" scheme="http://sizhezz.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>scala_5</title>
+    <link href="http://sizhezz.github.io/2022/04/17/scala_5/"/>
+    <id>http://sizhezz.github.io/2022/04/17/scala_5/</id>
+    <published>2022-04-16T21:15:20.000Z</published>
+    <updated>2025-04-23T07:00:39.570Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="scala-5"><a href="#scala-5" class="headerlink" title="scala_5"></a>scala_5</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;scala-5&quot;&gt;&lt;a href=&quot;#scala-5&quot; class=&quot;headerlink&quot; title=&quot;scala_5&quot;&gt;&lt;/a&gt;scala_5&lt;/h1&gt;</summary>
+      
+    
+    
+    
+    <category term="scala" scheme="http://sizhezz.github.io/categories/scala/"/>
+    
+    
+    <category term="随笔" scheme="http://sizhezz.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>html_3</title>
+    <link href="http://sizhezz.github.io/2022/04/17/html_3/"/>
+    <id>http://sizhezz.github.io/2022/04/17/html_3/</id>
+    <published>2022-04-16T18:15:20.000Z</published>
+    <updated>2025-04-23T07:00:39.555Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="html-3"><a href="#html-3" class="headerlink" title="html_3"></a>html_3</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;html-3&quot;&gt;&lt;a href=&quot;#html-3&quot; class=&quot;headerlink&quot; title=&quot;html_3&quot;&gt;&lt;/a&gt;html_3&lt;/h1&gt;</summary>
+      
+    
+    
+    
+    <category term="html" scheme="http://sizhezz.github.io/categories/html/"/>
+    
+    
+    <category term="示例" scheme="http://sizhezz.github.io/tags/%E7%A4%BA%E4%BE%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python_3</title>
+    <link href="http://sizhezz.github.io/2022/04/16/python_3/"/>
+    <id>http://sizhezz.github.io/2022/04/16/python_3/</id>
+    <published>2022-04-15T22:02:00.000Z</published>
+    <updated>2025-04-23T07:00:39.567Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="python-3"><a href="#python-3" class="headerlink" title="python_3"></a>python_3</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;python-3&quot;&gt;&lt;a href=&quot;#python-3&quot; class=&quot;headerlink&quot; title=&quot;python_3&quot;&gt;&lt;/a&gt;python_3&lt;/h1&gt;</summary>
+      
+    
+    
+    
+    <category term="python" scheme="http://sizhezz.github.io/categories/python/"/>
+    
+    
+    <category term="示例" scheme="http://sizhezz.github.io/tags/%E7%A4%BA%E4%BE%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux_4</title>
+    <link href="http://sizhezz.github.io/2022/04/15/linux_4/"/>
+    <id>http://sizhezz.github.io/2022/04/15/linux_4/</id>
+    <published>2022-04-15T11:45:20.000Z</published>
+    <updated>2025-04-23T07:00:39.564Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="linux-4"><a href="#linux-4" class="headerlink" title="linux_4"></a>linux_4</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;linux-4&quot;&gt;&lt;a href=&quot;#linux-4&quot; class=&quot;headerlink&quot; title=&quot;linux_4&quot;&gt;&lt;/a&gt;linux_4&lt;/h1&gt;</summary>
+      
+    
+    
+    
+    <category term="linux" scheme="http://sizhezz.github.io/categories/linux/"/>
+    
+    
+    <category term="心得" scheme="http://sizhezz.github.io/tags/%E5%BF%83%E5%BE%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>html_2</title>
+    <link href="http://sizhezz.github.io/2022/04/15/html_2/"/>
+    <id>http://sizhezz.github.io/2022/04/15/html_2/</id>
+    <published>2022-04-15T02:57:00.000Z</published>
+    <updated>2025-04-23T07:00:39.555Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="html-2"><a href="#html-2" class="headerlink" title="html_2"></a>html_2</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;html-2&quot;&gt;&lt;a href=&quot;#html-2&quot; class=&quot;headerlink&quot; title=&quot;html_2&quot;&gt;&lt;/a&gt;html_2&lt;/h1&gt;</summary>
+      
+    
+    
+    
+    <category term="html" scheme="http://sizhezz.github.io/categories/html/"/>
+    
+    
+    <category term="示例" scheme="http://sizhezz.github.io/tags/%E7%A4%BA%E4%BE%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>html_6</title>
+    <link href="http://sizhezz.github.io/2022/04/15/html_6/"/>
+    <id>http://sizhezz.github.io/2022/04/15/html_6/</id>
+    <published>2022-04-14T20:27:00.000Z</published>
+    <updated>2025-04-23T07:00:39.557Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="html-6"><a href="#html-6" class="headerlink" title="html_6"></a>html_6</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;html-6&quot;&gt;&lt;a href=&quot;#html-6&quot; class=&quot;headerlink&quot; title=&quot;html_6&quot;&gt;&lt;/a&gt;html_6&lt;/h1&gt;</summary>
+      
+    
+    
+    
+    <category term="html" scheme="http://sizhezz.github.io/categories/html/"/>
+    
+    
+    <category term="示例" scheme="http://sizhezz.github.io/tags/%E7%A4%BA%E4%BE%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux_3</title>
+    <link href="http://sizhezz.github.io/2022/04/15/linux_3/"/>
+    <id>http://sizhezz.github.io/2022/04/15/linux_3/</id>
+    <published>2022-04-14T18:35:20.000Z</published>
+    <updated>2025-04-23T07:00:39.564Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="linux-3"><a href="#linux-3" class="headerlink" title="linux_3"></a>linux_3</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;linux-3&quot;&gt;&lt;a href=&quot;#linux-3&quot; class=&quot;headerlink&quot; title=&quot;linux_3&quot;&gt;&lt;/a&gt;linux_3&lt;/h1&gt;</summary>
+      
+    
+    
+    
+    <category term="linux" scheme="http://sizhezz.github.io/categories/linux/"/>
+    
+    
+    <category term="心得" scheme="http://sizhezz.github.io/tags/%E5%BF%83%E5%BE%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>scala_3</title>
+    <link href="http://sizhezz.github.io/2022/04/14/scala_3/"/>
+    <id>http://sizhezz.github.io/2022/04/14/scala_3/</id>
+    <published>2022-04-14T13:38:40.000Z</published>
+    <updated>2025-04-23T07:00:39.569Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="scala-3"><a href="#scala-3" class="headerlink" title="scala_3"></a>scala_3</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;scala-3&quot;&gt;&lt;a href=&quot;#scala-3&quot; class=&quot;headerlink&quot; title=&quot;scala_3&quot;&gt;&lt;/a&gt;scala_3&lt;/h1&gt;</summary>
+      
+    
+    
+    
+    <category term="scala" scheme="http://sizhezz.github.io/categories/scala/"/>
+    
+    
+    <category term="随笔" scheme="http://sizhezz.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>javascript_1</title>
+    <link href="http://sizhezz.github.io/2022/04/13/javascript_1/"/>
+    <id>http://sizhezz.github.io/2022/04/13/javascript_1/</id>
+    <published>2022-04-13T09:45:20.000Z</published>
+    <updated>2025-04-23T07:00:39.560Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="javascript-1"><a href="#javascript-1" class="headerlink" title="javascript_1"></a>javascript_1</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;javascript-1&quot;&gt;&lt;a href=&quot;#javascript-1&quot; class=&quot;headerlink&quot; title=&quot;javascript_1&quot;&gt;&lt;/a&gt;javascript_1&lt;/h1&gt;</summary>
+      
+    
+    
+    
+    <category term="javascript" scheme="http://sizhezz.github.io/categories/javascript/"/>
+    
+    
+    <category term="笔记" scheme="http://sizhezz.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java_5</title>
+    <link href="http://sizhezz.github.io/2022/04/13/java_5/"/>
+    <id>http://sizhezz.github.io/2022/04/13/java_5/</id>
+    <published>2022-04-13T00:42:00.000Z</published>
+    <updated>2025-04-23T07:00:39.559Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="java-5"><a href="#java-5" class="headerlink" title="java_5"></a>java_5</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;java-5&quot;&gt;&lt;a href=&quot;#java-5&quot; class=&quot;headerlink&quot; title=&quot;java_5&quot;&gt;&lt;/a&gt;java_5&lt;/h1&gt;</summary>
+      
+    
+    
+    
+    <category term="java" scheme="http://sizhezz.github.io/categories/java/"/>
+    
+    
+    <category term="笔记" scheme="http://sizhezz.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python_1</title>
+    <link href="http://sizhezz.github.io/2022/04/13/python_1/"/>
+    <id>http://sizhezz.github.io/2022/04/13/python_1/</id>
+    <published>2022-04-12T17:22:00.000Z</published>
+    <updated>2025-04-23T07:00:39.566Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="python-1"><a href="#python-1" class="headerlink" title="python_1"></a>python_1</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;python-1&quot;&gt;&lt;a href=&quot;#python-1&quot; class=&quot;headerlink&quot; title=&quot;python_1&quot;&gt;&lt;/a&gt;python_1&lt;/h1&gt;</summary>
+      
+    
+    
+    
+    <category term="python" scheme="http://sizhezz.github.io/categories/python/"/>
+    
+    
+    <category term="示例" scheme="http://sizhezz.github.io/tags/%E7%A4%BA%E4%BE%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python_4</title>
+    <link href="http://sizhezz.github.io/2022/04/11/python_4/"/>
+    <id>http://sizhezz.github.io/2022/04/11/python_4/</id>
+    <published>2022-04-11T13:37:00.000Z</published>
+    <updated>2025-04-23T07:00:39.567Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="python-4"><a href="#python-4" class="headerlink" title="python_4"></a>python_4</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;python-4&quot;&gt;&lt;a href=&quot;#python-4&quot; class=&quot;headerlink&quot; title=&quot;python_4&quot;&gt;&lt;/a&gt;python_4&lt;/h1&gt;</summary>
+      
+    
+    
+    
+    <category term="python" scheme="http://sizhezz.github.io/categories/python/"/>
+    
+    
+    <category term="示例" scheme="http://sizhezz.github.io/tags/%E7%A4%BA%E4%BE%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>javascript_2</title>
+    <link href="http://sizhezz.github.io/2022/04/11/javascript_2/"/>
+    <id>http://sizhezz.github.io/2022/04/11/javascript_2/</id>
+    <published>2022-04-11T07:28:40.000Z</published>
+    <updated>2025-04-23T07:00:39.560Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="javascript-2"><a href="#javascript-2" class="headerlink" title="javascript_2"></a>javascript_2</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;javascript-2&quot;&gt;&lt;a href=&quot;#javascript-2&quot; class=&quot;headerlink&quot; title=&quot;javascript_2&quot;&gt;&lt;/a&gt;javascript_2&lt;/h1&gt;</summary>
+      
+    
+    
+    
+    <category term="javascript" scheme="http://sizhezz.github.io/categories/javascript/"/>
+    
+    
+    <category term="笔记" scheme="http://sizhezz.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>javascript_3</title>
+    <link href="http://sizhezz.github.io/2022/04/11/javascript_3/"/>
+    <id>http://sizhezz.github.io/2022/04/11/javascript_3/</id>
+    <published>2022-04-10T22:40:20.000Z</published>
+    <updated>2025-04-23T07:00:39.560Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="javascript-3"><a href="#javascript-3" class="headerlink" title="javascript_3"></a>javascript_3</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;javascript-3&quot;&gt;&lt;a href=&quot;#javascript-3&quot; class=&quot;headerlink&quot; title=&quot;javascript_3&quot;&gt;&lt;/a&gt;javascript_3&lt;/h1&gt;</summary>
+      
+    
+    
+    
+    <category term="javascript" scheme="http://sizhezz.github.io/categories/javascript/"/>
+    
+    
+    <category term="笔记" scheme="http://sizhezz.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>scala_1</title>
+    <link href="http://sizhezz.github.io/2022/04/10/scala_1/"/>
+    <id>http://sizhezz.github.io/2022/04/10/scala_1/</id>
+    <published>2022-04-10T05:10:20.000Z</published>
+    <updated>2025-04-23T07:00:39.568Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="scala-1"><a href="#scala-1" class="headerlink" title="scala_1"></a>scala_1</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;scala-1&quot;&gt;&lt;a href=&quot;#scala-1&quot; class=&quot;headerlink&quot; title=&quot;scala_1&quot;&gt;&lt;/a&gt;scala_1&lt;/h1&gt;</summary>
+      
+    
+    
+    
+    <category term="scala" scheme="http://sizhezz.github.io/categories/scala/"/>
+    
+    
+    <category term="随笔" scheme="http://sizhezz.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+</feed>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Smileyan</title>
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Sizhe's blog" type="application/atom+xml">
+</head>
+ 
+<body>
+    <!-- 网站名 -->
+    <h1>
+        <a href="/">Sizhe&#39;s blog</a> |
+        <a href="/">Home</a> | 
+        <a href="/archives">Archive</a> | 
+        <a href="/about/">About</a>
+    </h1>
+    <!-- 博客详情 -->
+ 
+
+<h2></h2>
+<p>2025/04/23 15:00:39 </p>
+<h1 id="hexo-posts-examples"><a href="#hexo-posts-examples" class="headerlink" title="hexo-posts-examples"></a>hexo-posts-examples</h1><p>Examples with categories and tags of hexo’s posts.</p>
+<h2 id="scripts-for-creating-posts"><a href="#scripts-for-creating-posts" class="headerlink" title="scripts for creating posts"></a>scripts for creating posts</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">to_int</span>(<span class="params">valid_time</span>):</span><br><span class="line"><span class="comment">#  = &#x27;2021-08-08 15:47:01&#x27;</span></span><br><span class="line">    d1 = datetime.datetime.strptime(valid_time,<span class="string">&#x27;%Y-%m-%d %H:%M:%S&#x27;</span>)</span><br><span class="line">    ts = <span class="built_in">int</span>(time.mktime(d1.timetuple()))</span><br><span class="line">    <span class="keyword">return</span> ts</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">to_date</span>(<span class="params">intTime</span>):</span><br><span class="line">    time1 = time.localtime(intTime)</span><br><span class="line">    <span class="keyword">return</span> time.strftime(<span class="string">&#x27;%Y-%m-%d %H:%M:%S&#x27;</span>, time1)</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">content</span>(<span class="params">one_type, one_tag, title</span>):</span><br><span class="line">    <span class="comment"># 开始时间与结束时间中随机</span></span><br><span class="line">    start = to_int(<span class="string">&#x27;2022-04-01 12:12:00&#x27;</span>)</span><br><span class="line">    end = to_int(<span class="string">&#x27;2022-04-18 12:12:00&#x27;</span>)</span><br><span class="line">    res1 = random.randrange(start, end, <span class="number">100</span>)</span><br><span class="line">    </span><br><span class="line">    format_date = to_date(res1)</span><br><span class="line">    </span><br><span class="line">    content = <span class="string">&#x27;---\n&#x27;</span> + \</span><br><span class="line">              <span class="string">&#x27;title:&#x27;</span> + title + <span class="string">&#x27;\n&#x27;</span> + \</span><br><span class="line">              <span class="string">&#x27;categories: &#x27;</span> + <span class="string">&#x27;\n&#x27;</span> + \</span><br><span class="line">              <span class="string">&#x27;  - &#x27;</span> + one_type + <span class="string">&#x27;\n&#x27;</span> + \</span><br><span class="line">                <span class="string">&#x27;tags: \n&#x27;</span> + \</span><br><span class="line">                <span class="string">&#x27;  - &#x27;</span> + one_tag + <span class="string">&quot;\n&quot;</span> + \</span><br><span class="line">                <span class="string">&#x27;date: &#x27;</span> + format_date + <span class="string">&quot;\n&quot;</span> + \</span><br><span class="line">                <span class="string">&#x27;---\n\n&#x27;</span> + <span class="string">&#x27;# &#x27;</span> + title + <span class="string">&#x27;\n&#x27;</span>            </span><br><span class="line">    <span class="keyword">return</span> content</span><br><span class="line"></span><br><span class="line">types = (<span class="string">&#x27;python&#x27;</span>, <span class="string">&#x27;java&#x27;</span>, <span class="string">&#x27;linux&#x27;</span>, <span class="string">&#x27;scala&#x27;</span>, <span class="string">&#x27;html&#x27;</span>, <span class="string">&#x27;javascript&#x27;</span>)</span><br><span class="line">tags = (<span class="string">&#x27;示例&#x27;</span>, <span class="string">&#x27;笔记&#x27;</span>, <span class="string">&#x27;心得&#x27;</span>, <span class="string">&#x27;随笔&#x27;</span>)</span><br><span class="line">times = <span class="number">6</span></span><br><span class="line"><span class="keyword">for</span> t, one <span class="keyword">in</span> <span class="built_in">enumerate</span>(types):</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(times):</span><br><span class="line">        file_name = <span class="string">&#x27;&#123;0&#125;_&#123;1&#125;.md&#x27;</span>.<span class="built_in">format</span>(one, i+<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(file_name, mode=<span class="string">&#x27;w+&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            f.write( content(one, tags[t%<span class="built_in">len</span>(tags)], <span class="string">&#x27;&#123;0&#125;_&#123;1&#125;&#x27;</span>.<span class="built_in">format</span>(one, i+<span class="number">1</span>)) )</span><br></pre></td></tr></table></figure>
+ 
+
+
+
+ 
+
+    <h3>categories</h3>
+    <ul>
+        
+            <li>
+                <a href="/categories/Hexo/">
+                    Hexo 
+                </a>
+            </li>
+        
+            <li>
+                <a href="/categories/html/">
+                    html 
+                </a>
+            </li>
+        
+            <li>
+                <a href="/categories/java/">
+                    java 
+                </a>
+            </li>
+        
+            <li>
+                <a href="/categories/javascript/">
+                    javascript 
+                </a>
+            </li>
+        
+            <li>
+                <a href="/categories/linux/">
+                    linux 
+                </a>
+            </li>
+        
+            <li>
+                <a href="/categories/latex/">
+                    latex 
+                </a>
+            </li>
+        
+            <li>
+                <a href="/categories/python/">
+                    python 
+                </a>
+            </li>
+        
+            <li>
+                <a href="/categories/scala/">
+                    scala 
+                </a>
+            </li>
+        
+    </ul>
+
+    <h3>tags</h3>
+    <ul>
+        
+            <li>
+                <a href="/tags/demo/">
+                    demo 
+                </a>
+            </li>
+        
+            <li>
+                <a href="/tags/%E7%A4%BA%E4%BE%8B/">
+                    示例 
+                </a>
+            </li>
+        
+            <li>
+                <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                    笔记 
+                </a>
+            </li>
+        
+            <li>
+                <a href="/tags/%E5%BF%83%E5%BE%97/">
+                    心得 
+                </a>
+            </li>
+        
+            <li>
+                <a href="/tags/%E9%9A%8F%E7%AC%94/">
+                    随笔 
+                </a>
+            </li>
+        
+    </ul>
+
+    
+
+</body>
+ 
+</html>
+
+
