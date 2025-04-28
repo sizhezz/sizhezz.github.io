@@ -6,7 +6,7 @@
   <link href="http://sizhezz.github.io/atom.xml" rel="self"/>
   
   <link href="http://sizhezz.github.io/"/>
-  <updated>2025-04-24T08:50:24.837Z</updated>
+  <updated>2025-04-28T11:44:28.489Z</updated>
   <id>http://sizhezz.github.io/</id>
   
   <author>
@@ -15,6 +15,55 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>嗅觉、经验或者工具</title>
+    <link href="http://sizhezz.github.io/2025/04/28/%E5%97%85%E8%A7%89%E3%80%81%E7%BB%8F%E9%AA%8C%E6%88%96%E8%80%85%E5%B7%A5%E5%85%B7/"/>
+    <id>http://sizhezz.github.io/2025/04/28/%E5%97%85%E8%A7%89%E3%80%81%E7%BB%8F%E9%AA%8C%E6%88%96%E8%80%85%E5%B7%A5%E5%85%B7/</id>
+    <published>2025-04-28T11:43:54.000Z</published>
+    <updated>2025-04-28T11:44:28.489Z</updated>
+    
+    <content type="html"><![CDATA[<p>在广州的这些天里，我吃到了很多好吃的，也看到了很多身影。景点一个也没有去，因为心情根本无暇顾及。这段时间天气也都很好，印象中只有两天是烈阳，阴天很闷很凉快，给到处奔走面试的我减轻了一些负担。</p><p>唯一收获是对图书馆的路线轻车熟路了，五号线珠江新城站从D口出，这样虽然走的远一些，但在地下通道里可以避开外面闷热的空气。只有一天晚上挤了一下三号线，因为记错了时间要着急回家吃饭，三号线的晚高峰真是带着浓浓的班味和怨气。</p><p>又是周一了，明天上午就要回南京了。我在这里明白了很多，因为来回奔波，一个人不断的碰壁，一些理想与梦境之外的事不得不深深的刻在自己脑子里。如何定义“自我”呢？主观的意识和言语可以把我的思想领着往前走，但是不能带动我的双脚。这些天里大脑在不断的对事情进行分类，把生活模糊的边界切割清晰，妄想从混沌之中找到一点线索。我逐渐意识到了所谓“客观”的重要性，一些必须要被外界看到的，不仅仅要存在我的脑海里。</p><p>生活的感觉像是必须追着四面八方时而隐现、时而长短又不知从何而来的花香，嗅觉、经验或是工具，你必须想尽一切办法找到他。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;在广州的这些天里，我吃到了很多好吃的，也看到了很多身影。景点一个也没有去，因为心情根本无暇顾及。这段时间天气也都很好，印象中只有两天是烈阳，阴天很闷很凉快，给到处奔走面试的我减轻了一些负担。&lt;/p&gt;
+&lt;p&gt;唯一收获是对图书馆的路线轻车熟路了，五号线珠江新城站从D口出，这样虽</summary>
+      
+    
+    
+    
+    
+    <category term="写作" scheme="http://sizhezz.github.io/tags/%E5%86%99%E4%BD%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo常用指令</title>
+    <link href="http://sizhezz.github.io/2025/04/24/hexo%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/"/>
+    <id>http://sizhezz.github.io/2025/04/24/hexo%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</id>
+    <published>2025-04-24T09:10:51.000Z</published>
+    <updated>2025-04-24T09:14:04.772Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>hexo s -p 5000 更改端口</li><li>hexo new 新建文章</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;ol&gt;
+&lt;li&gt;hexo s -p 5000 更改端口&lt;/li&gt;
+&lt;li&gt;hexo new 新建文章&lt;/li&gt;
+&lt;/ol&gt;
+</summary>
+      
+    
+    
+    
+    
+    <category term="tips" scheme="http://sizhezz.github.io/tags/tips/"/>
+    
+  </entry>
   
   <entry>
     <title>直到长出青苔</title>
